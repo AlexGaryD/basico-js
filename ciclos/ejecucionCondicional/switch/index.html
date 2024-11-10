@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Switch en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
-
 <body>
-  <script src="/ciclos/ejecucionCondicional/switch/index.js"></script>
+    <h1>Consulta de Precios de Frutas</h1>
+    <p>Introduce el nombre de una fruta:</p>
+    <input type="text" id="fruta" placeholder="Ej. Manzanas">
+    <button onclick="consultarPrecio()">Consultar Precio</button>
+    <div id="resultado"></div>
+    <script src="/ciclos/ejecucionCondicional/switch/index.js"></script>
 </body>
-
 </html>

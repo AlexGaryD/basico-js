@@ -27,7 +27,11 @@ for (fruta in listaDeCompras) {
 }
 
 for (fruta in listaDeCompras) {
-  console.log(`${fruta}:) Cantidad ${listaDeCompras[fruta]}`);
+  console.log(`${fruta}: Cantidad ${listaDeCompras[fruta]}`);
+}
+
+for (fruta of listaDeCompras) {
+  console.log(fruta);
 }
 /*
 El resultado de este código sería:

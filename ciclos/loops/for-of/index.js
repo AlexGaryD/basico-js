@@ -13,7 +13,7 @@ for (variable of iterable) {
 let canasta = ["manzana", "pera", "naranja", "uva"];
 
 // Recorre cada elemento del array 'canasta'
-for (let fruta of canasta) {
+for  (let fruta of canasta) {
     console.log(fruta); // Imprime cada fruta en la consola
 }
 

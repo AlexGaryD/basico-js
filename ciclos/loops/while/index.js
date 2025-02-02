@@ -13,7 +13,7 @@ while (condición) {
 let contador = 0;
 
 // Mientras la condición (contador < 10) sea verdadera, el bucle se ejecutará
-while (contador < 300) {
+while (contador < 10) {
     console.log(contador); // Imprime el valor actual de contador
     contador++; // Incrementa el valor de contador en 1
 }

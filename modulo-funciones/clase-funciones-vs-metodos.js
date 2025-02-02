@@ -2,47 +2,64 @@
 
 // 1. Pasar funciones como argumentos -> callback
 
-function a () {}
-function b (a) {}
-b(a)
-
-// Retornar funciones
-
-function a () {
-  function b () {}
-  return b
+function a() {
+    // Función a
 }
+function b(callback) {
+    // Función b que recibe una función como argumento
+    callback(); // Llama a la función pasada como argumento
+}
+b(a); // Pasa la función a como argumento a la función b
 
-// Asignar funciones a variables -> Expresión de función
+// 2. Retornar funciones
 
-const a = function () {}
-
-// Tener propiedades y métodos
-
-function a () {}
-const obj = {}
-a.call(obj)
-
-// Anidar funciones -> Nested functions
-
-function a () {
-  function b () {
-    function c () {
-    
+function c() {
+    // Función c
+    function d() {
+        // Función d anidada dentro de c
     }
-    c()
-  }
-  b()
+    return d; // Retorna la función d
 }
-a()
+const returnedFunction = c(); // Almacena la función retornada en una variable
+returnedFunction(); // Llama a la función retornada
 
-// ¿Es posible almacenar funciones en objetos?
+// 3. Asignar funciones a variables -> Expresión de función
+
+const e = function() {
+    // Función anónima asignada a la variable e
+};
+
+// 4. Tener propiedades y métodos
+
+function f() {
+    // Función f
+}
+const obj = {}; // Objeto vacío
+f.call(obj); // Llama a la función f con el objeto obj como contexto
+
+// 5. Anidar funciones -> Nested functions
+
+function g() {
+    // Función g
+    function h() {
+        // Función h anidada dentro de g
+        function i() {
+            // Función i anidada dentro de h
+        }
+        i(); // Llama a la función i
+    }
+    h(); // Llama a la función h
+}
+g(); // Llama a la función g
+
+// 6. ¿Es posible almacenar funciones en objetos?
 
 const rocket = {
-  name: 'Falcon 9',
-  launchMessage: function launchMessage () {
-    console.log('🔥')
-  }
-}
+    name: 'Falcon 9', // Propiedad del objeto
+    launchMessage: function launchMessage() {
+        // Método del objeto
+        console.log('🔥🚀👽🔥'); // Imprime un mensaje en la consola
+    }
+};
 
-rocket.launchMessage()
+rocket.launchMessage(); // Llama al método launchMessage del objeto rocket

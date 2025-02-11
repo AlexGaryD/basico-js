@@ -44,7 +44,8 @@ const grades = [85, 92, 60, 78, 95, 66, 88, 50, 94];
 
 const passingGrades = grades.filter(grade => grade >= 70); // Filtra las calificaciones aprobatorias (>= 70)
 
-const averagePassingGrade = passingGrades.reduce((sum, grade) => sum + grade, 0) / passingGrades.length; // Calcula el promedio de las calificaciones aprobatorias
+const averagePassingGrade = passingGrades.reduce((sum, grade) => sum + grade, 0) / passingGrades.length; // Calcula
+// el promedio de las calificaciones aprobatorias
 
 console.log('Original Grades: ', grades); // Imprime las calificaciones originales
 console.log('Passing Grades: ', passingGrades); // Imprime las calificaciones aprobatorias

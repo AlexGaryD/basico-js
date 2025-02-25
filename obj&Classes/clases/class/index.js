@@ -11,3 +11,7 @@ class Persona {
 const persona1 = new Persona("Mariana", 25);
 
 persona1.saludar();
+
+const persona2 = new Persona("Juan", 30);
+
+persona2.saludar();

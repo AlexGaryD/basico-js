@@ -1,0 +1,57 @@
+Función del Motor de JavaScript
+El flujo de pasos ordenado de cómo un motor de JavaScript (como V8) procesa y ejecuta código JavaScript, detallando los componentes que intervienen en cada etapa:
+
+1. Recepción del Código JavaScript
+
+Componente: Motor de JavaScript
+Descripción: El motor de JavaScript recibe el código fuente para ser procesado.
+2. Parsing (Análisis Sintáctico)
+
+Componente: Parser
+Descripción:
+El Lexer convierte el código fuente en tokens (elementos léxicos como palabras clave, operadores, etc.).
+Luego, el Parser toma estos tokens y construye un Abstract Syntax Tree (AST), que es una representación estructurada del código.
+3. Optimización Inicial
+
+Componente: Interpreter
+Descripción: El AST se convierte en bytecode (un código intermedio) por el intérprete. En motores modernos como V8, este bytecode se puede ejecutar directamente o servir como base para la optimización.
+4. Gestión de la Memoria
+
+Componente: Memory Heap y Garbage Collector (GC)
+Descripción:
+El Memory Heap es donde se almacenan los objetos y variables.
+El Garbage Collector gestiona la memoria, limpiando objetos no utilizados para liberar espacio.
+5. Ejecución del Código
+
+Componente: Execution Engine
+Descripción:
+Interpreter: Ejecuta el bytecode línea por línea.
+JIT Compiler (Just-In-Time): Identifica funciones que se ejecutan frecuentemente y las compila en código máquina para mejorar el rendimiento.
+Durante la ejecución, el motor utiliza la Call Stack para rastrear las funciones en ejecución y la Memory Heap para almacenar los datos.
+6. Manejo de Asincronía
+
+Componente: Event Loop, Task Queue, Microtask Queue
+Descripción:
+El Event Loop supervisa el Call Stack y la Task Queue.
+Las tareas asíncronas como setTimeout o promesas se encolan en la Task Queue o Microtask Queue.
+Cuando el Call Stack está vacío, el Event Loop ejecuta las tareas en las colas.
+7. Interacción con APIs Externas
+
+Componente: Web APIs, FFI (Foreign Function Interface)
+Descripción:
+Las Web APIs proporcionan funcionalidades adicionales como DOM, Fetch, Timers, etc., que no forman parte del núcleo de JavaScript.
+El FFI permite que JavaScript interactúe con código escrito en otros lenguajes (como C++ en Node.js).
+8. Optimización Dinámica
+
+Componente: JIT Compiler y Execution Engine
+Descripción:
+Durante la ejecución, el JIT Compiler sigue optimizando el código, convirtiendo las partes más utilizadas en código máquina altamente optimizado.
+El Execution Engine se encarga de ejecutar este código optimizado.
+9. Liberación de Recursos
+
+Componente: Garbage Collector (GC)
+Descripción: Después de que el código ha terminado de ejecutarse, el Garbage Collector se encarga de liberar los recursos y la memoria ocupada por los objetos y variables que ya no se usan de la memoria heap.
+10. Finalización de la Ejecución
+
+Componente: Motor de JavaScript
+Descripción: El motor finaliza la ejecución del código, habiendo gestionado las tareas, optimizado el rendimiento, y limpiado la memoria.

@@ -4,11 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Reto Final</title>
+  <link rel="stylesheet" href="/basico-js/obj&Classes/retoFinal/styles.css">
 </head>
 
 <body>
-  <script src="/obj&Classes/retoFinal/index.js"></script>
+  <div class="container">
+    <h1>Bienvenido al Sistema</h1>
+    <div class="login-form">
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" placeholder="Ingresa tu usuario">
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" placeholder="Ingresa tu contraseña">
+      <button onclick="signIn()">Iniciar Sesión</button>
+    </div>
+    <div id="timeline" class="timeline"></div>
+  </div>
+  <script src="/basico-js/obj&Classes/retoFinal/index.js"></script>
 </body>
 
 </html>

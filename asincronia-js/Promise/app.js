@@ -1,4 +1,4 @@
-/*Resumen
+/* Resumen
 
 ¿Cómo manejar promesas asíncronas en JavaScript utilizando async/await?
 El mundo del desarrollo de software está en constante evolución y aprender
@@ -20,33 +20,31 @@ Para poner en práctica estos conceptos, vamos a hacer
 una petición a una API pública usando fetch. Este método
 proporciona una forma fácil de obtener recursos de manera asíncrona a través de la red.
 
-Implementación con .then() y .catch()*/
+Implementación con .then() y .catch() */
 
-function fetchData(){
-    fetch("https://rickandmortyapi.com/api/character")
-        .then((response) => response.json
-        ())
-        .then(data => console.log(data))
-        .cath(error => console.log
-            (error));
+// Función para obtener datos utilizando fetch y promesas
+function fetchData() {
+  fetch("https://rickandmortyapi.com/api/character")
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
 }
 
-/*En este script, fetch realiza una solicitud a la API de Rick and Morty.
+/* En este script, fetch realiza una solicitud a la API de Rick and Morty.
 Una vez recibida la respuesta, la convierte a JSON y luego imprime los datos.
 Si ocurre un error durante la solicitud, el bloque catch lo capturará y lo mostrará en la consola.
 
-Conversión a async/await*/
+Conversión a async/await */
 
+// Función para obtener datos utilizando async/await
 async function fetchData() {
-    try{
-        let response = await fetch
-        ("https://rickandmortyapi.com/api/character")
-        let data = await response.json();
-        console.log(data);
-
-    } catch (error){
-        console.log(error);
-    }
+  try {
+    let response = await fetch("https://rickandmortyapi.com/api/character");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 /*
@@ -71,8 +69,6 @@ un poderoso conjunto de herramientas para hacer solicitudes en la red mucho más
 El camino al dominio de tecnologías modernas comienza con pequeños y sencillos pasos.
 */
 
-
-
 /*
 Resumen
 
@@ -95,22 +91,24 @@ Por ejemplo, digamos que tienes un array de URLs de una API, como la de Rick and
 Puedes iterar sobre cada URL y realizar una petición fetch asíncrona de la siguiente manera
 */
 
-const urls =[
-    "https://rickandmortyapi.com/api/character",
-    "https://rickandmortyapi.com/api/location",
-    "https://rickandmortyapi.com/api/episode",
+// Array de URLs para realizar múltiples peticiones
+const urls = [
+  "https://rickandmortyapi.com/api/character",
+  "https://rickandmortyapi.com/api/location",
+  "https://rickandmortyapi.com/api/episode",
 ];
 
-async function fetchNewData(){
-    try{
-        for await (let url of urls){
-            let response = await fetch(url);
-            let data = await response.json();
-            console.log(data);
-        }
-    } catch (error){
-        console.log(error);
+// Función para obtener datos de múltiples URLs utilizando for await...of
+async function fetchNewData() {
+  try {
+    for await (let url of urls) {
+      let response = await fetch(url);
+      let data = await response.json();
+      console.log(data);
     }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 /*

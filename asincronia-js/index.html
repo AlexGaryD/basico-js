@@ -1,5 +1,6 @@
-Función del Motor de JavaScript
-El flujo de pasos ordenado de cómo un motor de JavaScript (como V8) procesa y ejecuta código JavaScript, detallando los componentes que intervienen en cada etapa:
+<!--Función del Motor de JavaScript
+El flujo de pasos ordenado de cómo un motor de JavaScript (como V8) procesa y ejecuta código 
+JavaScript, detallando los componentes que intervienen en cada etapa:
 
 1. Recepción del Código JavaScript
 
@@ -10,11 +11,14 @@ Descripción: El motor de JavaScript recibe el código fuente para ser procesado
 Componente: Parser
 Descripción:
 El Lexer convierte el código fuente en tokens (elementos léxicos como palabras clave, operadores, etc.).
-Luego, el Parser toma estos tokens y construye un Abstract Syntax Tree (AST), que es una representación estructurada del código.
+Luego, el Parser toma estos tokens y construye un Abstract Syntax Tree (AST), que es una 
+representación estructurada del código.
 3. Optimización Inicial
 
 Componente: Interpreter
-Descripción: El AST se convierte en bytecode (un código intermedio) por el intérprete. En motores modernos como V8, este bytecode se puede ejecutar directamente o servir como base para la optimización.
+Descripción: El AST se convierte en bytecode (un código intermedio) por el intérprete. 
+En motores modernos como V8, este bytecode se puede ejecutar directamente o servir como 
+base para la optimización.
 4. Gestión de la Memoria
 
 Componente: Memory Heap y Garbage Collector (GC)
@@ -26,8 +30,10 @@ El Garbage Collector gestiona la memoria, limpiando objetos no utilizados para l
 Componente: Execution Engine
 Descripción:
 Interpreter: Ejecuta el bytecode línea por línea.
-JIT Compiler (Just-In-Time): Identifica funciones que se ejecutan frecuentemente y las compila en código máquina para mejorar el rendimiento.
-Durante la ejecución, el motor utiliza la Call Stack para rastrear las funciones en ejecución y la Memory Heap para almacenar los datos.
+JIT Compiler (Just-In-Time): Identifica funciones que se ejecutan frecuentemente y las compila
+ en código máquina para mejorar el rendimiento.
+Durante la ejecución, el motor utiliza la Call Stack para rastrear las funciones en ejecución 
+y la Memory Heap para almacenar los datos.
 6. Manejo de Asincronía
 
 Componente: Event Loop, Task Queue, Microtask Queue
@@ -39,19 +45,60 @@ Cuando el Call Stack está vacío, el Event Loop ejecuta las tareas en las colas
 
 Componente: Web APIs, FFI (Foreign Function Interface)
 Descripción:
-Las Web APIs proporcionan funcionalidades adicionales como DOM, Fetch, Timers, etc., que no forman parte del núcleo de JavaScript.
+Las Web APIs proporcionan funcionalidades adicionales como DOM, Fetch, Timers, etc., que no 
+forman parte del núcleo de JavaScript.
 El FFI permite que JavaScript interactúe con código escrito en otros lenguajes (como C++ en Node.js).
 8. Optimización Dinámica
 
 Componente: JIT Compiler y Execution Engine
 Descripción:
-Durante la ejecución, el JIT Compiler sigue optimizando el código, convirtiendo las partes más utilizadas en código máquina altamente optimizado.
+Durante la ejecución, el JIT Compiler sigue optimizando el código, convirtiendo las partes
+ más utilizadas en código máquina altamente optimizado.
 El Execution Engine se encarga de ejecutar este código optimizado.
 9. Liberación de Recursos
 
 Componente: Garbage Collector (GC)
-Descripción: Después de que el código ha terminado de ejecutarse, el Garbage Collector se encarga de liberar los recursos y la memoria ocupada por los objetos y variables que ya no se usan de la memoria heap.
+Descripción: Después de que el código ha terminado de ejecutarse, el Garbage Collector
+ se encarga de liberar los recursos y la memoria ocupada por los objetos y variables que ya no se usan de la memoria heap.
 10. Finalización de la Ejecución
 
 Componente: Motor de JavaScript
-Descripción: El motor finaliza la ejecución del código, habiendo gestionado las tareas, optimizado el rendimiento, y limpiado la memoria.
+Descripción: El motor finaliza la ejecución del código, habiendo gestionado las tareas,
+ optimizado el rendimiento, y limpiado la memoria.
+
+¿Qué son las promesas en JavaScript?
+Las promesas son una herramienta poderosa para transformar nuestro código de JavaScript
+ de un modelo síncrono a uno asíncrono. Funcionan al indicar al navegador que ciertas funciones deben ejecutarse de manera independiente. Una vez resueltas, las promesas se integran en el call stack para proporcionar un resultado. Mediante su uso, podemos manejar tareas asíncronas de manera más fluida y organizada.
+
+¿Cuáles son los estados de las promesas?
+Las promesas presentan tres estados fundamentales durante su ciclo de vida:
+
+Pending (pendiente): Este es el estado inicial. La promesa está creada pero aún no se 
+ha resuelto ni ha fallado.
+Fulfilled (resuelta): Indica que la promesa se ha completado con éxito.
+Rejected (rechazada): Ocurre cuando la promesa no se puede cumplir, produciendo un error.
+¿Qué funciones de callback usan las promesas?
+Las promesas trabajan con dos tipos de funciones de callback:
+
+Resolve: Se ejecuta cuando la promesa se resuelve exitosamente.
+Reject: Se activa cuando la promesa no se puede completar, indicando un fallo.
+¿Cómo utilizar métodos como then y catch con promesas?
+Las promesas vienen con dos métodos esenciales para gestionar su resultado:
+
+Then: Se ejecuta cuando la promesa se resuelve. A través de este método, podemos llevar a cabo acciones
+ basadas en el resultado exitoso de una promesa.
+Catch: Se utiliza para manejar errores. Si la promesa falla, el catch nos proporciona la información
+ necesaria para entender por qué no se resolvió.
+Aquí tienes un ejemplo de código ilustrando cómo manejar una promesa asíncrona aprovechando un setTimeout:
+
+
+¿Cómo crear y manejar promesas en JavaScript?
+Crear una promesa implica declarar una constante
+e instanciar una nueva promesa, donde especificamos las funciones resolve y reject que 
+manejarán el resultado. Dentro, podemos simular, por ejemplo, una petición a un API usando un setTimeout. 
+Este temporizador nos permite retrasar la ejecución, indicando un manejo asíncrono:
+
+Este ejemplo demuestra el uso básico de promesas para ejecutar un código asíncrono que resuelve una 
+operación tras un retraso. Mediante las funciones then y catch, capturamos y gestionamos los resultados 
+de una acción, ya sea exitosa o fallida. Con esta base, podrás implementar flujos
+más complejos en tus proyectos de JavaScript, mejorando el rendimiento y la experiencia de usuario.-->

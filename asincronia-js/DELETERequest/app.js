@@ -89,3 +89,5 @@ postList.addEventListener("click", (event) => {
     ); // Enviar una solicitud DELETE para eliminar el post
   }
 });
+
+let arr = [1, 2, 3]; for (let item of arr) { console.log(item); }

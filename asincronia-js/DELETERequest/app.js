@@ -79,8 +79,10 @@ form.addEventListener("submit", (event) => {
 
 // Añadir un evento al contenedor de la lista de posts para eliminar un post
 postList.addEventListener("click", (event) => {
+  console.log(event);
   if (event.target.tagName === "BUTTON") {
-    const postId = event.target.closest("article").id; // Obtener el ID del post a eliminar
+    const postId = event.target.closest("article").id;
+    console.log(postId) // Obtener el ID del post a eliminar
     sendHTTPRequest(
       "DELETE",
       `https://jsonplaceholder.typicode.com/posts/${postId}`
